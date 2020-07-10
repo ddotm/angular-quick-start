@@ -33,4 +33,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Update any npm libraries that is outdated.  
 `npm start`  
 Make sure the app builds and runs without errors.  
+Add `package-lock.json` to `.gitignore`
 
+### Add lodash
+`npm add lodash@latest -E --save`  
+`npm add @types/lodash@latest -E --save-dev`  
+Add `"allowSyntheticDefaultImports": true` to tsconfig.base.json under `compilerOptions`
+Add `import _ from 'lodash';` to any component or service where you need to use lodash
