@@ -30,7 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `npm i -g @angular/cli@10.0.2`  
 `ng new angular-quick-start --commit=false --createApplication=true --packageManager=npm --routing=true --skipGit=true --skipInstall=true --style=scss --dryRun=true`  
 `npm outdated`  
-Update any npm libraries that is outdated.  
+Update any npm libraries that are outdated.  
 `npm start`  
 Make sure the app builds and runs without errors.  
 Add `package-lock.json` to `.gitignore`
