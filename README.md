@@ -40,3 +40,9 @@ Add `package-lock.json` to `.gitignore`
 `npm add @types/lodash@latest -E --save-dev`  
 Add `"allowSyntheticDefaultImports": true` to tsconfig.base.json under `compilerOptions`
 Add `import _ from 'lodash';` to any component or service where you need to use lodash
+
+### Add Bootstrap 4
+Add the latest Bootstrap  
+`npm i bootstrap@latest -E --save`  
+In styles.scss  
+`@import '~bootstrap/dist/css/bootstrap.min.css';`
