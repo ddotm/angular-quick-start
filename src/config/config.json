@@ -1,0 +1,5 @@
+{
+  "production": false,
+  "envName": "local",
+  "apiUrl": "https://YOUR_API_URL"
+}

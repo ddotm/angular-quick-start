@@ -28,7 +28,10 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/web.config",
+              { "glob": "**/*", "input": "./configs", "output": "/configs/" },
+              { "glob": "**/*", "input": "./src/config", "output": "./" }
             ],
             "styles": [
               "src/styles.scss"
@@ -43,8 +46,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "",
+                  "with": ""
                 }
               ],
               "optimization": true,
@@ -135,6 +138,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular-quick-start"
 }
