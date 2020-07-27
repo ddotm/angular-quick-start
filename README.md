@@ -196,3 +196,49 @@ export class FooterComponent implements OnInit {
 Add TopNavComponent to the AppComponent's template  
 `<app-top-nav></app-top-nav>`
 Add mark-up for the top nav menu  
+
+### OnPush change detection implementation
+Define a class to serve as the view model that includes all the properties the template will need.
+```typescript
+import _ from 'lodash';
+
+export class FooterVm {
+  public appName: string = null;
+  public envName: string = null;
+
+  constructor(data?: FooterVm) {
+    if (!_.isEmpty(data)) {
+      _.merge(this, data);
+    }
+  }
+}
+```
+In the component decorator, add `changeDetection: ChangeDetectionStrategy.OnPush`
+```typescript
+@Component({
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+```
+Define a property of the view model type, a BehaviorSubject and an Observable of the same type.
+```typescript
+  private vm: FooterVm = new FooterVm();
+  private subject = new BehaviorSubject<FooterVm>(this.vm);
+  public vm$: Observable<FooterVm> = this.subject.asObservable();
+```
+Any time a data update needs to be made, set the data and then pipe it into the observable
+```typescript
+    this.vm.appName = Config.props.appName;
+    this.subject.next(this.vm);
+```
+Wrap the template into an ng-container tag with an async pipe injecting the latest view model state into the template.
+```html
+<ng-container *ngIf="vm$ | async as vm">
+</ng-container>
+```
+Use properties of the view model in the template. All updates will work correctly as long as the new data values are piped into the observable.
+```html
+<span>{{vm.envName}}</span>
+```
