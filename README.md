@@ -175,7 +175,7 @@ import {Component, OnInit} from '@angular/core';
 import {Config} from '../common/config';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'aqs-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
@@ -191,10 +191,28 @@ export class FooterComponent implements OnInit {
 }
 ```
 
+### Specifying component and directive prefixes
+In `tslint.json`, list the allowed prefixes for directives and components under 
+`"directive-selector"` and `"component-selector"` properties.
+```json
+"directive-selector": [
+      true,
+      "attribute",
+      ["app", "aqs"],
+      "camelCase"
+    ],
+"component-selector": [
+      true,
+      "element",
+      ["app", "aqs"],
+      "kebab-case"
+    ]
+```
+
 ### Add top nav menu
 `ng g c TopNav`  
 Add TopNavComponent to the AppComponent's template  
-`<app-top-nav></app-top-nav>`
+`<aqs-top-nav></aqs-top-nav>`
 Add mark-up for the top nav menu  
 
 ### OnPush change detection implementation
@@ -216,7 +234,7 @@ export class FooterVm {
 In the component decorator, add `changeDetection: ChangeDetectionStrategy.OnPush`
 ```typescript
 @Component({
-  selector: 'app-footer',
+  selector: 'aqs-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -4,7 +4,7 @@ import {Config} from '../common/config';
 import {FooterVm} from './footer-vm';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'aqs-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
