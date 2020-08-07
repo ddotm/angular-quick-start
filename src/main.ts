@@ -2,7 +2,7 @@ import {enableProdMode} from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import _ from 'lodash';
 import {AppModule} from './app/app.module';
-import {Config, ConfigProps} from './app/common/config';
+import {Config, ConfigProps} from './app/common/models/config';
 
 fetch('config.json')
   .then(res => res.json())

@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {Config} from '../common/config';
+import {Config} from '../common/models/config';
 import {FooterVm} from './footer-vm';
 
 @Component({

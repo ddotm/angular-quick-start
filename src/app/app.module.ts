@@ -3,6 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {CommonAppModule} from './common/common-app.module';
 import {FooterComponent} from './footer/footer.component';
 import {HomeComponent} from './home/home.component';
 import {TopNavComponent} from './top-nav/top-nav.component';
@@ -16,7 +17,8 @@ import {TopNavComponent} from './top-nav/top-nav.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonAppModule
   ],
   providers: [],
   bootstrap: [AppComponent]
