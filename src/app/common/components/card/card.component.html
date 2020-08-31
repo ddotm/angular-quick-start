@@ -1,1 +1,15 @@
-<p>card works!</p>
+<div class="card"
+     style="width: 18rem;">
+  <div class="card-header">
+    <h5 class="card-title">{{cardModel?.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{cardModel?.subtitle}}</h6>
+  </div>
+  <div class="card-body">
+
+    <ng-content></ng-content>
+
+    <!-- Dynamic component loaded in ng-template -->
+    <ng-template appComponentLoader></ng-template>
+
+  </div>
+</div>
