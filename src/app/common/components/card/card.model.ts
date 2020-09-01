@@ -3,16 +3,18 @@ import _ from 'lodash';
 export interface ICardModel {
   showHeader?: boolean;
   collapsible?: boolean;
+  startCollapsed?: boolean;
   icon?: any;
   iconClasses?: string;
   title?: string;
+  subtitle?: string;
   cardClasses?: string;
   cardHeaderClasses?: string;
   cardBodyClasses?: string;
 }
 
 export class CardModel implements ICardModel {
-  public showHeader?: boolean = false;
+  public showHeader?: boolean = true;
   public collapsible?: boolean = false;
   public startCollapsed?: boolean = false;
   public icon?: any = null;

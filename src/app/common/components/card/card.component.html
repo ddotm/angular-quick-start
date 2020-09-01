@@ -1,10 +1,13 @@
 <div class="card"
-     style="width: 18rem;">
-  <div class="card-header">
+     [ngClass]="cardModel?.cardClasses">
+  <div class="card-header"
+       [ngClass]="cardModel?.cardHeaderClasses"
+       *ngIf="cardModel?.showHeader">
     <h5 class="card-title">{{cardModel?.title}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{cardModel?.subtitle}}</h6>
   </div>
-  <div class="card-body">
+  <div class="card-body"
+       [ngClass]="cardModel?.cardBodyClasses">
 
     <ng-content></ng-content>
 

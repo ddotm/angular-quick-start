@@ -1,3 +1,4 @@
+import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {CardComponent} from './components/card/card.component';
 import {AppDirectivesModule} from './directives/app-directives.module';
@@ -9,6 +10,7 @@ import {AppDirectivesModule} from './directives/app-directives.module';
     CardComponent
   ],
   imports: [
+    CommonModule,
     AppDirectivesModule
   ]
 })
