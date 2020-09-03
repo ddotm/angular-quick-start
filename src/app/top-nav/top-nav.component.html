@@ -32,7 +32,18 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <ul class="navbar-nav ml-2">
-      <li class="navbar-item nav-link"><a class="btn btn-outline-info">Sign in</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarUserDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{userProfile?.name}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarUserDropdown">
+          <a class="dropdown-item btn" >Profile</a>
+          <a class="dropdown-item btn">Settings</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item btn" (click)="signOut()">Log out</a>
+        </div>
+      </li>
+      <li class="navbar-item nav-link"><a class="btn btn-outline-info" (click)="signIn()">Sign in</a></li>
       <li class="navbar-item nav-link"><a class="btn btn-outline-warning">Sign up</a></li>
     </ul>
   </div>

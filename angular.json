@@ -30,6 +30,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/web.config",
+              { "glob": "oidc-client.min.js", "input": "./node_modules/oidc-client/dist/", "output": "./" },
+              { "glob": "callback.html", "input": "src/", "output": "./" },
               { "glob": "**/*", "input": "./configs", "output": "/configs/" },
               { "glob": "**/*", "input": "./src/config", "output": "./" }
             ],
@@ -37,6 +39,7 @@
               "src/styles.scss"
             ],
             "scripts": [
+              "node_modules/oidc-client/dist/oidc-client.min.js",
               "node_modules/jquery/dist/jquery.slim.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -77,7 +80,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "angular-quick-start:build",
-            "port": 4200
+            "port": 4201
           },
           "configurations": {
             "production": {
