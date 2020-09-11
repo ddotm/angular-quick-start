@@ -2,5 +2,13 @@
   "appName": "Angular Quick Start",
   "production": false,
   "envName": "local",
-  "apiUrl": "https://YOUR_API_URL"
+  "apiUrl": "https://YOUR_API_URL",
+  "auth": {
+    "authority": "https://localhost:44337/",
+    "client_id": "js",
+    "redirect_uri": "http://localhost:4201/callback.html",
+    "response_type": "code",
+    "scope": "openid profile web_api email",
+    "post_logout_redirect_uri": "http://localhost:4201/index.html"
+  }
 }
