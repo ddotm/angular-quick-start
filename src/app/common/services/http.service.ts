@@ -13,22 +13,22 @@ export class HttpService {
   }
 
   public get<T>(url: string): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/${url}`);
+    return this.httpClient.get(`${this.apiUrl}${url}`);
   }
 
   public post<T>(url: string, data: any): Observable<any> {
-    return this.httpClient.post(`${this.apiUrl}/${url}`, data);
+    return this.httpClient.post(`${this.apiUrl}${url}`, data);
   }
 
   public put<T>(url: string, data: any): Observable<any> {
-    return this.httpClient.put(`${this.apiUrl}/${url}`, data);
+    return this.httpClient.put(`${this.apiUrl}${url}`, data);
   }
 
   public patch<T>(url: string, data: any): Observable<any> {
-    return this.httpClient.patch(`${this.apiUrl}/${url}`, data);
+    return this.httpClient.patch(`${this.apiUrl}${url}`, data);
   }
 
   public delete<T>(url: string): Observable<any> {
-    return this.httpClient.delete(`${this.apiUrl}/${url}`);
+    return this.httpClient.delete(`${this.apiUrl}${url}`);
   }
 }

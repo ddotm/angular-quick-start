@@ -1,0 +1,5 @@
+<app-card [cardModel]="cardModel">
+  <ul class="list-unstyled">
+    <li *ngFor="let file of $fileList | async">{{file}}</li>
+  </ul>
+</app-card>
