@@ -2,7 +2,7 @@
   "appName": "Angular Quick Start",
   "production": false,
   "envName": "local",
-  "apiUrl": "https://YOUR_API_URL",
+  "apiUrl": "https://localhost:44342/",
   "auth": {
     "authority": "https://localhost:44337/",
     "client_id": "js",
