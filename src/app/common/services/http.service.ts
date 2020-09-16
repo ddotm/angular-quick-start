@@ -1,6 +1,7 @@
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 import {Config} from '../models/config';
 
 @Injectable({
@@ -13,7 +14,10 @@ export class HttpService {
   }
 
   public get<T>(url: string): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}${url}`);
+    return this.httpClient.get(`${this.apiUrl}${url}`, {observe: 'response'})
+               .pipe(map((response: HttpResponse<any>) => {
+                 return response.body;
+               }));
   }
 
   public post<T>(url: string, data: any): Observable<any> {

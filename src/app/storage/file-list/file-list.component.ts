@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {CardModel} from '../../common/components/card/card.model';
+import {StorageFileInfo} from '../storage-file-info';
 import {StorageService} from '../storage.service';
 
 @Component({
@@ -14,13 +15,13 @@ export class FileListComponent implements OnInit {
     cardClasses: 'w-25'
   });
 
-  public $fileList: Observable<string> = null;
+  public $fileList: Observable<Array<StorageFileInfo>> = null;
 
   constructor(private storageService: StorageService) {
   }
 
   ngOnInit(): void {
-    // this.$fileList = this.storageService.getFileList('');
+    this.$fileList = this.storageService.getFileList('');
   }
 
 }
