@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import {CommonAppModule} from './common/common-app.module';
 import {FooterComponent} from './footer/footer.component';
 import {HomeComponent} from './home/home.component';
-import {FileListComponent} from './storage/file-list/file-list.component';
+import {StorageModule} from './storage/storage.module';
 import {TopNavComponent} from './top-nav/top-nav.component';
 
 @NgModule({
@@ -15,14 +15,14 @@ import {TopNavComponent} from './top-nav/top-nav.component';
     AppComponent,
     HomeComponent,
     TopNavComponent,
-    FooterComponent,
-    FileListComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    CommonAppModule
+    CommonAppModule,
+    StorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

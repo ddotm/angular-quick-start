@@ -1,5 +1,16 @@
 <app-card [cardModel]="cardModel">
-  <ul class="list-unstyled" *ngIf="$fileList">
-    <li *ngFor="let file of $fileList | async">{{file.name}}</li>
+  <label>
+    Container name:
+    <input type="text"
+           [formControl]="containerName">
+  </label>
+  <button (click)="getFileList()">List files</button>
+
+  <ul class="list-unstyled"
+      *ngIf="$fileList">
+    <li *ngFor="let file of $fileList | async">
+      <a href="{{file.uri}}"
+         target="_blank">{{file.name}}</a>
+    </li>
   </ul>
 </app-card>
