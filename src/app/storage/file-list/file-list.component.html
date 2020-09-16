@@ -1,10 +1,12 @@
 <app-card [cardModel]="cardModel">
-  <label>
-    Container name:
-    <input type="text"
-           [formControl]="containerName">
-  </label>
-  <button (click)="getFileList()">List files</button>
+  <form [formGroup]="form">
+    <label>
+      Container name:
+      <input type="text"
+             formControlName="containerName">
+    </label>
+    <button (click)="getFileList()">List files</button>
+  </form>
 
   <ul class="list-unstyled"
       *ngIf="$fileList">
