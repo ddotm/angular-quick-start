@@ -11,6 +11,7 @@
       </div>
       <div class="col-4 d-flex flex-column mt-auto">
         <button class="btn btn-primary align-bottom"
+                [disabled]="!form.valid"
                 (click)="getFileList()">List files
         </button>
       </div>

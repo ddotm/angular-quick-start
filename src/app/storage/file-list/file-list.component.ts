@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {CardModel} from '../../common/components/card/card.model';
 import {StorageFileInfo} from '../storage-file-info';
@@ -17,14 +17,15 @@ export class FileListComponent implements OnInit {
   });
 
   public $fileList: Observable<Array<StorageFileInfo>> = null;
-  public form: FormGroup = new FormGroup({
-    containerName: new FormControl('')
-  });
+  public form: FormGroup = null;
 
   constructor(private storageService: StorageService) {
   }
 
   ngOnInit(): void {
+    this.form = new FormGroup({
+      containerName: new FormControl('', Validators.required)
+    });
   }
 
   public getFileList(): void {

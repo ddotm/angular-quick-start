@@ -1,6 +1,7 @@
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, throwError} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
 import {AuthService} from './auth.service';
 
 @Injectable({
@@ -26,6 +27,17 @@ export class TokenInterceptorService implements HttpInterceptor {
     const authReq = req.clone({headers: newHeaders});
     // Then we return an Observable that will run the request
     // or pass it to the next interceptor if any
-    return next.handle(authReq);
+    return next.handle(authReq)
+               .pipe(catchError((err: HttpErrorResponse) => {
+                   if (err.status === 401) {
+                     this.authService.login();
+                   }
+                   return throwError(err);
+                 }),
+                 map((response: HttpEvent<any>) => {
+                   if (response instanceof HttpResponse) {
+                   }
+                   return response;
+                 }));
   }
 }
